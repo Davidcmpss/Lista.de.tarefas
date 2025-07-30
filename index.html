@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="containerInput">
+      <h1>Lista de Tarefas</h1>
+      <p>Adicione suas tarefas!</p>
+      <input type="text" id="inputTarefa" placeholder="Digite a sua tarefa" />
+      <button onclick="adicionarTarefa()">Adicionar Tarefa</button>
+    </div>
+    <div class="containerLista" id="lista">
+      <p id="mensagem">Suas atividades aparecerão aqui</p>
+      <ul id="listaTarefas"></ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
