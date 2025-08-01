@@ -1,4 +1,5 @@
 let tarefas = [];
+const mensa = document.getElementById("mensagem");
 
 function adicionarTarefa() {
   //recebe valor do input do usuário
@@ -6,7 +7,6 @@ function adicionarTarefa() {
   // .trim é para limpaar os espaços vazios nas extremidades do valor texto
   let tarefa = inputTarefa.value.trim();
   // cria uma variável mensagem
-  const mensa = document.getElementById("mensagem");
 
   // se tarefa for vazia ou igual a então será mostrado uma mensagem de erro
   if (tarefa == "") {
@@ -67,6 +67,7 @@ function renderizarTarefas() {
 function removeTarefa(i) {
   tarefas.splice(i, 1);
   renderizarTarefas();
+  mensa.textContent = "Tarefa removida com sucesso.";
   apagaBotao();
 }
 
@@ -76,6 +77,7 @@ function editarTarefa(i) {
     tarefas[i] = tarefaEditada;
     renderizarTarefas();
   }
+  mensa.textContent = "Tarefa editada com sucesso.";
 }
 
 function butesvaziarLista() {
@@ -94,7 +96,6 @@ function butesvaziarLista() {
 function esvaziarLista() {
   tarefas.length = "";
   renderizarTarefas();
-  const mensa = document.getElementById("mensagem");
   mensa.textContent = "Lista esvaziada com sucesso!";
   apagaBotao();
 }
@@ -102,5 +103,6 @@ function esvaziarLista() {
 function apagaBotao() {
   if (tarefas.length == "") {
     document.getElementById("butRemove").remove();
+    mensa.textContent = "Lista esvaziada com sucesso!";
   }
 }
