@@ -7,16 +7,21 @@ function adicionarTarefa() {
   let tarefa = inputTarefa.value.trim();
   // cria uma variável mensagem
   const mensa = document.getElementById("mensagem");
-  // se tarefa for vazia então será mostrado uma mensagem de erro
+
+  // se tarefa for vazia ou igual a então será mostrado uma mensagem de erro
   if (tarefa == "") {
-    const mensagem2 =
+    const mensagem =
       "Digite uma tarefa válida para adicionar na sua lista de tarefas.";
-    mensa.textContent = mensagem2;
+    mensa.textContent = mensagem;
+  }
+  if (tarefas.includes(tarefa)) {
+    const mensagem3 = "Essa tarefa já está inclusa na sua lista de tarefas.";
+    mensa.textContent = mensagem3;
   }
   // se não, será criado um elemento na lista com o valor da vriável inputTarefa - a prória variável tarefa - e mpstrado uma mensagem de sucesso.
   else {
-    const mensagem3 = "Tarefa adicionada com sucesso!";
-    mensa.textContent = mensagem3;
+    const mensagem2 = "Tarefa adicionada com sucesso!";
+    mensa.textContent = mensagem2;
     tarefas.push(tarefa);
     renderizarTarefas();
     butesvaziarLista();
@@ -62,6 +67,7 @@ function renderizarTarefas() {
 function removeTarefa(i) {
   tarefas.splice(i, 1);
   renderizarTarefas();
+  apagaBotao();
 }
 
 function editarTarefa(i) {
@@ -90,5 +96,11 @@ function esvaziarLista() {
   renderizarTarefas();
   const mensa = document.getElementById("mensagem");
   mensa.textContent = "Lista esvaziada com sucesso!";
-  document.getElementById("butRemove").remove();
+  apagaBotao();
+}
+
+function apagaBotao() {
+  if (tarefas.length == "") {
+    document.getElementById("butRemove").remove();
+  }
 }
