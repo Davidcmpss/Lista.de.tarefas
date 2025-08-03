@@ -12,10 +12,45 @@
       <p>Adicione suas tarefas!</p>
       <input type="text" id="inputTarefa" placeholder="Digite a sua tarefa" />
       <button onclick="adicionarTarefa()">Adicionar Tarefa</button>
+      <div class="tutorial">
+        <h3>Está com dúvidas?</h3>
+        <p>Entenda melhor as nossas ferramentas.</p>
+        <div class="tuto">
+          <div class="tar">
+            <p class="textTarefa">tarefa</p>
+          </div>
+          <div class="but">
+            <div class="butVermelho">
+              <div class="circuloVermelho"></div>
+              <p>deletar tarefa</p>
+            </div>
+            <div class="butAmarelo">
+              <div class="circuloAmarelo"></div>
+              <p class="textEditar">editar tarefa</p>
+            </div>
+            <div class="butVerde">
+              <div class="circuloVerde"></div>
+              <p class="textConcluir">concluir tarefa</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="containerLista" id="lista">
-      <p id="mensagem">Suas atividades aparecerão aqui</p>
-      <ul id="listaTarefas"></ul>
+      <div class="divLista">
+        <h2 id="tituloToDo">Para Fazer</h2>
+        <p class="mensagemInterativa" id="mensagem">
+          Suas atividades aparecerão aqui
+        </p>
+        <ul id="listaTarefas"></ul>
+      </div>
+    </div>
+    <div class="containerConclido" id="listaCon">
+      <h2 id="tituloToDo">Feito</h2>
+      <p class="mensagemInterativa" id="mensagem">
+        Parabéns, continue focando em cumprir suas tarefas.
+      </p>
+      <ul id="listaConcluida"></ul>
     </div>
 
     <script src="script.js"></script>
