@@ -2,10 +2,11 @@ body {
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
   height: 100vh;
   margin: 0;
-  background-color: #1b1a1a;
+  background-color: #110e19;
 }
 .containerInput {
   display: flex;
@@ -13,85 +14,238 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 40%;
+  width: 22%;
   height: 80%;
-  margin-left: 10%;
-}
-
-.containerLista {
-  margin-right: 10%;
-  margin-top: 20px;
-  width: 40%;
-  min-height: 80%;
-  max-height: auto;
-  border: 2px solid #8e8e8e;
-  border-radius: 8px;
-  padding: 20px;
-  align-items: center;
+  margin-top: 5rem;
 }
 
 h1 {
-  color: #ffffff;
+  color: #ff8400;
+  margin: 2px;
 }
 p {
-  color: #8e8e8e;
+  color: #ff8400;
   font-size: 1.1em;
+  margin-top: 3px;
 }
+
+.tutorial {
+  background-color: #201b2e;
+  border: 2px solid #7968a7;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+}
+
+h3 {
+  color: #7968a7;
+  margin-bottom: 2px;
+  margin-top: 5px;
+}
+
+.tutorial p {
+  color: #7968a7;
+  font-size: 1em;
+}
+
+.tuto {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.tar {
+  width: 50%;
+  padding: 0px 5px;
+}
+
+.tar p {
+  background-color: #beb9b9;
+  color: #4d4d4d;
+  padding: 8px 10px 0px;
+  font-size: 0.8em;
+  border-radius: 15px;
+  height: 22px;
+}
+
+.but {
+  width: 50%;
+  justify-content: center;
+  padding: 3px 0px;
+}
+
+.butVermelho {
+  background-color: #2a0f10;
+  border: 1px solid #c23f3fcc;
+  border-radius: 30px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.circuloVermelho {
+  background-color: #c23f3fcc;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  margin-right: 10px;
+  margin-left: 0;
+}
+
+.butVermelho p {
+  color: #c23f3fcc;
+  margin: 0;
+  font-size: 0.8em;
+}
+
+.butAmarelo {
+  background-color: #2a270f;
+  border: 1px solid #c8b143;
+  border-radius: 30px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.circuloAmarelo {
+  background-color: #c8b143;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  margin-right: 10px;
+  margin-left: 0;
+}
+
+.butAmarelo p {
+  color: #c8b143;
+  margin: 0;
+  font-size: 0.8em;
+}
+
+.butVerde {
+  background-color: #112a0f;
+  border: 1px solid #44b948;
+  border-radius: 30px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.circuloVerde {
+  background-color: #44b948;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  margin-right: 10px;
+  margin-left: 0;
+}
+
+.butVerde p {
+  color: #44b948;
+  margin: 0;
+  font-size: 0.8em;
+}
+
+.containerLista {
+  margin-right: 20px;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  width: 35%;
+  min-height: 80%;
+  max-height: auto;
+  border: 2px solid #7968a7;
+  background-color: #201b2e;
+  border-top-left-radius: 47px;
+  border-bottom-left-radius: 47px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.divLista {
+  text-align: center;
+  width: 90%;
+  padding: 15px;
+  min-height: 530px;
+  max-height: auto;
+}
+
+h2 {
+  color: #7968a7;
+  margin-bottom: 2px;
+}
+
+.mensagemInterativa {
+  color: #7968a7;
+}
+
+.containerConclido {
+  margin-right: 20px;
+  margin-top: 5rem;
+  width: 35%;
+  height: 80%;
+  border: 2px solid #7968a7;
+  background-color: #201b2e;
+  border-top-right-radius: 47px;
+  border-bottom-right-radius: 47px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 button {
-  background-color: #1b1a1a;
-  color: #ffffff;
+  background-color: #ff8400;
+  color: #82490c;
   padding: 10px 20px;
-  border: 2px solid #8e8e8e;
-  border-radius: 5px;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 1em;
   transition: background-color 0.3s ease;
-  margin-top: 10px;
-}
-button:hover {
-  background-color: #8e8e8e;
-  color: #1b1a1a;
-  border: 2px solid #8e8e8e;
+  margin-bottom: 15px;
 }
 
 button.Remover {
-  background-color: #1b1a1a;
-  margin-left: 55px;
-  color: #ffffff;
-  padding: 10px;
-  border: 2px solid #8e8e8e;
-  border-radius: 2.5px;
+  background-color: #c23f3fcc;
+  margin-left: 5px;
+  margin-top: 0;
+  height: 100%;
+  width: 55px;
+  border-radius: 50px;
   cursor: pointer;
-  font-size: 1em;
   transition: background-color 0.3s ease;
 }
 
-img.imagemRemover button.Remover:hover {
-  width: 30px;
-  height: 30px;
-}
-
-img.imagemRemover {
-  width: 20px;
-  height: 20px;
-}
-
-img.imagemEditar {
-  width: 20px;
-  height: 20px;
-}
-
 button.Editar {
-  background-color: #1b1a1a;
-  margin-left: 10px;
-  color: #ffffff;
-  padding: 10px;
-  border: 2px solid #8e8e8e;
-  border-radius: 2.5px;
+  background-color: #e1c849cc;
+  margin-left: 5px;
+  margin-top: 0;
+  height: 100%;
+  width: 55px;
+  border-radius: 50px;
   cursor: pointer;
-  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+button.Concluir {
+  background-color: #44b948;
+  margin-left: 5px;
+  margin-top: 0;
+  height: 100%;
+  width: 55px;
+  border-radius: 50px;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
@@ -99,30 +253,30 @@ ul {
   list-style: none;
   padding: 0;
   margin-top: 20px;
+  height: auto;
+}
+.linhaTarefa {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
 }
 ul li {
-  color: #ffffff;
-  border: 2px solid #8e8e8e;
+  color: #4d4d4d;
+  background-color: #beb9b9d3;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  margin: 5px 0;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-ul li:hover {
-  background-color: #8e8e8e;
-  color: #1b1a1a;
-  transition: background-color 0.3s ease;
+  width: 60%;
+  height: 5px;
+  padding: 25px;
+  border-radius: 100px;
 }
 
 .menuTarefa {
   display: flex;
   flex-direction: row;
-  width: auto;
+  width: 40%;
 }
 
 /* Estilo para o campo de entrada */
@@ -130,19 +284,19 @@ input[type="text"] {
   padding: 10px;
   width: 80%;
   max-width: 500px;
-  margin-top: 10px;
+  margin-top: 40px;
   margin-bottom: 10px;
-  border: 2px solid #8e8e8e;
+  border: 2px solid #7968a7;
   border-radius: 5px;
   font-size: 1em;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
   outline: none;
   transition: border-color 0.3s ease;
-  background-color: #1b1a1a;
-  color: #f4f0ea;
+  background-color: #201b2e;
+  color: #7968a7;
 }
 input[type="text"]:focus {
-  color: #ffffff;
-  border-color: #8e8e8e;
-  background-color: #333333;
+  color: #7968a7;
+  border-color: #7968a7;
+  background-color: #201b2e;
 }
