@@ -1,4 +1,5 @@
 let tarefas = [];
+let tarefasConcluidas = [];
 const mensa = document.getElementById("mensagem");
 
 function adicionarTarefa() {
@@ -6,22 +7,20 @@ function adicionarTarefa() {
   const inputTarefa = document.getElementById("inputTarefa");
   // .trim é para limpaar os espaços vazios nas extremidades do valor texto
   let tarefa = inputTarefa.value.trim();
-  // cria uma variável mensagem
 
-  // se tarefa for vazia ou igual a então será mostrado uma mensagem de erro
   if (tarefa == "") {
     const mensagem =
       "Digite uma tarefa válida para adicionar na sua lista de tarefas.";
     mensa.textContent = mensagem;
-  }
-  if (tarefas.includes(tarefa)) {
+    mensa.style.color = "#c23f3fcc";
+  } else if (tarefas.includes(tarefa)) {
     const mensagem3 = "Essa tarefa já está inclusa na sua lista de tarefas.";
     mensa.textContent = mensagem3;
-  }
-  // se não, será criado um elemento na lista com o valor da vriável inputTarefa - a prória variável tarefa - e mpstrado uma mensagem de sucesso.
-  else {
+    mensa.style.color = "#ffa200cc";
+  } else {
     const mensagem2 = "Tarefa adicionada com sucesso!";
     mensa.textContent = mensagem2;
+    mensa.style.color = "#7968a7";
     tarefas.push(tarefa);
     renderizarTarefas();
     butesvaziarLista();
@@ -37,30 +36,31 @@ function renderizarTarefas() {
 
   // i < tamanho da lista - se dá pelo fato de que o indicie de uma array é sempre um número menor que o número do tamanho dela.
   for (let i = 0; i < tarefas.length; i++) {
+    const linhaTarefa = document.createElement("div");
+    linhaTarefa.className = "linhaTarefa";
     let novaTarefa = document.createElement("li");
     novaTarefa.textContent = tarefas[i];
     const botaoRemover = document.createElement("button");
-    const imgRemover = document.createElement("img");
-    imgRemover.src = "img/icone_de_lixo.png";
-    imgRemover.className = "imagemRemover";
     botaoRemover.className = "Remover";
     botaoRemover.onclick = () => removeTarefa(i);
 
     const botaoEditar = document.createElement("button");
-    const imgEditar = document.createElement("img");
-    imgEditar.src = "img/icone_de_editar.png";
-    imgEditar.className = "imagemEditar";
     botaoEditar.className = "Editar";
     botaoEditar.onclick = () => editarTarefa(i);
+
+    const botaoConcluir = document.createElement("button");
+    botaoConcluir.className = "Concluir";
+    botaoConcluir.onclick = () => concluirTarefa(i);
+
     const menuTarefa = document.createElement("div");
     menuTarefa.className = "menuTarefa";
-    novaTarefa.appendChild(menuTarefa);
 
+    listaTarefas.appendChild(linhaTarefa);
+    linhaTarefa.appendChild(novaTarefa);
+    linhaTarefa.appendChild(menuTarefa);
     menuTarefa.appendChild(botaoRemover);
-    botaoRemover.appendChild(imgRemover);
     menuTarefa.appendChild(botaoEditar);
-    botaoEditar.appendChild(imgEditar);
-    listaTarefas.appendChild(novaTarefa);
+    menuTarefa.appendChild(botaoConcluir);
   }
 }
 
@@ -68,6 +68,7 @@ function removeTarefa(i) {
   tarefas.splice(i, 1);
   renderizarTarefas();
   mensa.textContent = "Tarefa removida com sucesso.";
+  mensa.style.color = "#7968a7";
   apagaBotao();
 }
 
@@ -78,17 +79,31 @@ function editarTarefa(i) {
     renderizarTarefas();
   }
   mensa.textContent = "Tarefa editada com sucesso.";
+  mensa.style.color = "#7968a7";
+}
+
+function concluirTarefa(i) {
+  tarefas.splice(i, 1);
+  renderizarTarefas();
+  mensa.textContent = "Tarefa concluida com sucesso.";
+  mensa.style.color = "#7968a7";
+  tarefasConcluidas.push(tarefas[i]);
+  apagaBotao();
+  renderizarTarefasConcluidas(i);
+}
+
+function renderizarTarefasConcluidas(i) {
+  const listaConcluida = document.getElementById("listaConcluida");
+  listaConcluida.innerHTML = "";
 }
 
 function butesvaziarLista() {
   const lista = document.getElementById("lista");
-  const divLista = document.createElement("div");
-  lista.appendChild(divLista);
   if (tarefas.length == 1) {
     const butLimpar = document.createElement("button");
     butLimpar.id = "butRemove";
     butLimpar.textContent = "Esvaziar Lista";
-    divLista.appendChild(butLimpar);
+    lista.appendChild(butLimpar);
     butLimpar.onclick = () => esvaziarLista();
   }
 }
@@ -97,6 +112,7 @@ function esvaziarLista() {
   tarefas.length = "";
   renderizarTarefas();
   mensa.textContent = "Lista esvaziada com sucesso!";
+  mensa.style.color = "#7968a7";
   apagaBotao();
 }
 
@@ -104,5 +120,6 @@ function apagaBotao() {
   if (tarefas.length == "") {
     document.getElementById("butRemove").remove();
     mensa.textContent = "Lista esvaziada com sucesso!";
+    mensa.style.color = "#7968a7";
   }
 }
