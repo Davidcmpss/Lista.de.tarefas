@@ -10,6 +10,7 @@ body {
 }
 .containerInput {
   display: flex;
+  flex: 1 1 22%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -32,11 +33,11 @@ p {
 
 .tutorial {
   background-color: #201b2e;
-  border: 2px solid #7968a7;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   margin-top: 50px;
   display: flex;
+  flex: 0 1 auto;
   flex-direction: column;
   align-items: center;
   padding: 25px;
@@ -164,11 +165,11 @@ h3 {
   width: 35%;
   min-height: 80%;
   max-height: auto;
-  border: 2px solid #7968a7;
   background-color: #201b2e;
   border-top-left-radius: 47px;
   border-bottom-left-radius: 47px;
   display: flex;
+  flex: 1 1 35%;
   flex-direction: column;
   align-items: center;
 }
@@ -188,6 +189,7 @@ h2 {
 
 .mensagemInterativa {
   color: #7968a7;
+  font-size: 1em;
 }
 
 .containerConclido {
@@ -195,7 +197,6 @@ h2 {
   margin-top: 5rem;
   width: 35%;
   height: 80%;
-  border: 2px solid #7968a7;
   background-color: #201b2e;
   border-top-right-radius: 47px;
   border-bottom-right-radius: 47px;
@@ -221,8 +222,8 @@ button.Remover {
   margin-left: 5px;
   margin-top: 0;
   height: 100%;
-  width: 55px;
-  border-radius: 50px;
+  width: 3.6vw;
+  border-radius: 10vw;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -232,8 +233,8 @@ button.Editar {
   margin-left: 5px;
   margin-top: 0;
   height: 100%;
-  width: 55px;
-  border-radius: 50px;
+  width: 3.6vw;
+  border-radius: 10vw;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -243,8 +244,8 @@ button.Concluir {
   margin-left: 5px;
   margin-top: 0;
   height: 100%;
-  width: 55px;
-  border-radius: 50px;
+  width: 3.6vw;
+  border-radius: 10vw;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -254,12 +255,15 @@ ul {
   padding: 0;
   margin-top: 20px;
   height: auto;
+  width: auto;
 }
 .linhaTarefa {
   display: flex;
   flex-direction: row;
   padding: 5px;
+  width: auto;
 }
+
 ul li {
   color: #4d4d4d;
   background-color: #beb9b9d3;
@@ -271,6 +275,14 @@ ul li {
   height: 5px;
   padding: 25px;
   border-radius: 100px;
+}
+
+.divListaConcluida {
+  text-align: center;
+  width: 90%;
+  padding: 15px;
+  min-height: 530px;
+  max-height: auto;
 }
 
 .menuTarefa {
@@ -299,4 +311,30 @@ input[type="text"]:focus {
   color: #7968a7;
   border-color: #7968a7;
   background-color: #201b2e;
+}
+
+@media (max-width: 1000px) {
+  body {
+    flex-direction: column;
+    align-items: center;
+    justify-content: initial;
+    padding: 5%;
+  }
+
+  .containerInput {
+    margin: 10px;
+    width: 80%;
+  }
+
+  .containerLista {
+    margin: 10px;
+    border-radius: 47px 47px 0 0;
+    width: 80%;
+  }
+
+  .containerConclido {
+    margin: 10px;
+    border-radius: 0 0 47px 47px;
+    width: 80%;
+  }
 }
