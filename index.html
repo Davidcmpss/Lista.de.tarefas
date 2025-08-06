@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de Tarefas</title>
     <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <div class="containerInput">
@@ -46,11 +47,13 @@
       </div>
     </div>
     <div class="containerConclido" id="listaCon">
-      <h2 id="tituloToDo">Feito</h2>
-      <p class="mensagemInterativa" id="mensagem">
-        Parabéns, continue focando em cumprir suas tarefas.
-      </p>
-      <ul id="listaConcluida"></ul>
+      <div class="divListaConcluida">
+        <h2 id="tituloToDo">Feito</h2>
+        <p class="mensagemInterativa" id="mensagem">
+          Suas tarefas concluídas aparecerão aqui.
+        </p>
+        <ul id="listaConcluida" class="listaConcluida"></ul>
+      </div>
     </div>
 
     <script src="script.js"></script>
