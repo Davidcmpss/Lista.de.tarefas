@@ -83,18 +83,31 @@ function editarTarefa(i) {
 }
 
 function concluirTarefa(i) {
+  tarefasConcluidas.push(tarefas[i]);
+  renderizarTarefasConcluidas(i);
   tarefas.splice(i, 1);
   renderizarTarefas();
   mensa.textContent = "Tarefa concluida com sucesso.";
   mensa.style.color = "#7968a7";
-  tarefasConcluidas.push(tarefas[i]);
+  butesvaziarListaConcluida();
   apagaBotao();
-  renderizarTarefasConcluidas(i);
 }
 
 function renderizarTarefasConcluidas(i) {
   const listaConcluida = document.getElementById("listaConcluida");
   listaConcluida.innerHTML = "";
+  mensa.textContent = "Parabéns, continue focando em cumprir suas tarefas.";
+
+  for (i = 0; i < tarefasConcluidas.length; i++) {
+    const linhaTarefaConcluidas = document.createElement("div");
+    linhaTarefaConcluidas.className = "linhaTarefa";
+    const novaTarefaConcluida = document.createElement("li");
+    novaTarefaConcluida.className = "TarefaConcluida";
+    novaTarefaConcluida.textContent = tarefasConcluidas[i];
+
+    listaConcluida.appendChild(linhaTarefaConcluidas);
+    linhaTarefaConcluidas.appendChild(novaTarefaConcluida);
+  }
 }
 
 function butesvaziarLista() {
@@ -122,4 +135,23 @@ function apagaBotao() {
     mensa.textContent = "Lista esvaziada com sucesso!";
     mensa.style.color = "#7968a7";
   }
+}
+
+function butesvaziarListaConcluida() {
+  const listaConcluida = document.getElementById("listaCon");
+  if (tarefasConcluidas.length == 1) {
+    const butLimparCon = document.createElement("button");
+    butLimparCon.id = "butRemoveCon";
+    butLimparCon.textContent = "Esvaziar Lista";
+    listaConcluida.appendChild(butLimparCon);
+    butLimparCon.onclick = () => esvaziarListaConcluida();
+  }
+}
+
+function esvaziarListaConcluida() {
+  tarefasConcluidas.length = "";
+  renderizarTarefasConcluidas();
+  mensa.textContent = "Lista esvaziada com sucesso!";
+  mensa.style.color = "#7968a7";
+  document.getElementById("butRemoveCon").remove();
 }
